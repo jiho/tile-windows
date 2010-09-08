@@ -7,18 +7,20 @@ A collection of Applescripts which resize and tile windows neatly over the deskt
 
 I personally use:
 
-	Maximize Vertically		⌃`
-
-	Left	⌃⌥⌘←
-	Right	⌃⌥⌘→
-	Bottom	⌃⌥⌘↓
-	Top		⌃⌥⌘↑
-
-	Upper Left	⌃⌥⇧←
-	Lower Left	⌃⌥⇧↓
-	Lower Right	⌃⌥⇧→
-	Upper Right	⌃⌥⇧↑
-
-	Left Third		⌃⌥←
-	Right Third		⌃⌥→
-	Center Third	⌃⌥↑
+	Maximize Vertically   ⌃`
+	
+	Left                ⌃⌥⌘←
+	Right               ⌃⌥⌘→
+	Top                 ⌃⌥⌘↑
+	Bottom              ⌃⌥⌘↓
+	
+	Upper Left          ⌃⌥⇧←
+	Lower Left          ⌃⌥⇧↓
+	Lower Right         ⌃⌥⇧→
+	Upper Right         ⌃⌥⇧↑
+	
+	Left Third          ⌃⌥←
+	Right Third         ⌃⌥→
+	Upper Center Third  ⌃⌥↑
+	Lower Center Third  ⌃⌥↓
+	Center Third     (none)
