@@ -5,7 +5,8 @@
  *
  *)
 
--- Get display sizetell application "Finder"
+-- Get display size
+tell application "Finder"
 	set b to bounds of window of desktop
 	set displayWidth to (item 3 of b)
 	set displayHeight to (item 4 of b)
