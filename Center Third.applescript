@@ -20,6 +20,9 @@ else
 	set dockSize to 0
 end if
 
+-- "Get" menubar size
+set menubarSize to 22
+
 set curApp to (path to frontmost application as Unicode text)
 
 tell application curApp
@@ -29,11 +32,7 @@ tell application curApp
 			set {x1, y1, x2, y2} to (get bounds)
 			
 			-- Vertical size
-			if curApp ends with ":Finder.app:" then
-				set y1 to 44
-			else
-				set y1 to 22
-			end if
+			set y1 to menubarSize
 			set y2 to displayHeight
 			
 			-- Horizontal size
