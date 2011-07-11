@@ -20,7 +20,7 @@ else
 	set dockSize to 0
 end if
 
--- "Get" menubar size
+-- Set menubar size
 set menubarSize to 22
 
 set curApp to (path to frontmost application as Unicode text)
@@ -32,12 +32,20 @@ tell application curApp
 			set {x1, y1, x2, y2} to (get bounds)
 			
 			-- Vertical size
-			set y1 to menubarSize + (displayHeight - menubarSize) / 2
-			-- account for status bar in the Finder
-			if curApp ends with ":Finder.app:" then
-				set y1 to y1 + 22
-			end if
+			set usableHeight to (displayHeight - menubarSize)
+			set y1 to menubarSize + usableHeight / 2
 			set y2 to displayHeight
+
+			if curApp ends with ":Finder.app:" then
+    			-- account for status bar in the Finder
+                set y1 to y1 + 22
+				-- account for TotalFinder
+				tell application "Finder"
+					if (exists "mac:Applications:TotalFinder.app") then
+						set y1 to y1 - 44 - 14
+					end if
+				end tell
+			end if
 			
 			-- Horizontal size
 			set x1 to dockSize + (displayWidth - dockSize) / 3

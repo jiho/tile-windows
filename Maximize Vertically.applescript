@@ -11,7 +11,7 @@ tell application "Finder"
 	set displayHeight to (item 4 of b)
 end tell
 
--- "Get" menubar size
+-- Set menubar size
 set menubarSize to 22
 
 set curApp to (path to frontmost application as Unicode text)
@@ -25,6 +25,15 @@ tell application curApp
 			-- Vertical size
 			set y1 to menubarSize
 			set y2 to displayHeight
+			if curApp ends with ":Finder.app:" then
+				-- account for TotalFinder
+				tell application "Finder"
+					if (exists "mac:Applications:TotalFinder.app") then
+						set y1 to y1 - 44
+					end if
+				end tell
+			end if
+			
 			
 			-- Put the new bounds in action
 			set bounds to {x1, y1, x2, y2}
